@@ -4,6 +4,7 @@ import Search from "./component/search/search.component";
 import CardList from "./component/card-list/card-list.component";
 
 const App = () => {
+  console.log(process.env);
   const [recipes, setRecipes] = useState([]);
   const [filteredRecipes, setFilteredRecipes] = useState(recipes);
   const [searchField, setSearchField] = useState("");
@@ -12,7 +13,7 @@ const App = () => {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "b59407378dmshadb62ed97b56668p1b0f73jsn081f6415ca3c",
+        "X-RapidAPI-Key": process.env.REACT_APP_RECIPE_API_KEY,
         "X-RapidAPI-Host": "tasty.p.rapidapi.com",
       },
     };
